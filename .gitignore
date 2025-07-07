@@ -1,0 +1,28 @@
+/vendor/
+/pub/static/*
+!/pub/static/.htaccess
+/generated/
+/var/
+/app/etc/env.php
+/app/etc/config.php
+
+# IDE / OS files
+.idea/
+*.iml
+*.swp
+.DS_Store
+
+# Composer
+composer.lock
+
+# PHPUnit
+.phpunit.result.cache
+
+# nginx log
+*.log
+
+# Docker
+docker-compose.override.yml
+
+# Magento Cloud
+.magento/
