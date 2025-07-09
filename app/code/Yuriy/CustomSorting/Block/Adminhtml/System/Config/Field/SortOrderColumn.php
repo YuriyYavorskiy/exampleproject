@@ -12,6 +12,10 @@ class SortOrderColumn extends Select
         if (!$this->getOptions()) {
             $this->setOptions($this->getSortOptions());
         }
+
+        $this->setName($this->getInputName());
+        $this->setId($this->getHtmlId());
+
         return parent::_toHtml();
     }
 

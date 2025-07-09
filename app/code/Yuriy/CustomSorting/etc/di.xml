@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Config\Source\ListSort">
+        <plugin name="add_dynamic_sort_attributes_plugin"
+                type="Yuriy\CustomSorting\Plugin\AddDynamicSortAttributesPlugin" />
+    </type>
+    <type name="Magento\Catalog\Model\Category\Attribute\Source\Sortby">
+        <plugin name="add_dynamic_sort_attributes_plugin_category"
+                type="Yuriy\CustomSorting\Plugin\AddDynamicSortAttributesPlugin" />
+    </type>
+    <type name="Magento\Catalog\Model\Config">
+        <plugin name="add_frontend_sorting_from_category" type="Yuriy\CustomSorting\Plugin\AddFrontendSortingOptionsPlugin"/>
+    </type>
+
+    <type name="Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider">
+        <plugin name="yuriy_customsorting_add_custom_fields_to_index"
+                type="Yuriy\CustomSorting\Plugin\AddCustomAttributesToIndex"
+                sortOrder="10" />
+    </type>
+    <type name="Magento\Elasticsearch\Model\Adapter\Elasticsearch">
+        <plugin name="add_custom_fields_to_result" type="Yuriy\CustomSorting\Plugin\AddFieldsToOpensearchDocumentPlugin" sortOrder="20" />
+    </type>
+
+
+
+</config>

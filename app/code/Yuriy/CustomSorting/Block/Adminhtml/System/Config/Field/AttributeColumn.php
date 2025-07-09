@@ -12,6 +12,10 @@ class AttributeColumn extends Select
         if (!$this->getOptions()) {
             $this->setOptions($this->getAttributeOptions());
         }
+
+        $this->setName($this->getInputName());
+        $this->setId($this->getHtmlId());
+
         return parent::_toHtml();
     }
 
@@ -21,7 +25,7 @@ class AttributeColumn extends Select
             ['label' => 'Name', 'value' => 'name'],
             ['label' => 'Price', 'value' => 'price'],
             ['label' => 'Special Price', 'value' => 'special_price'],
-            ['label' => 'Created At', 'value' => 'created_at'],
+            ['label' => 'Bestsellers', 'value' => 'bestseller'],
             ['label' => 'Position', 'value' => 'position'],
             ['label' => 'Rating Summary', 'value' => 'rating_summary'],
         ];
